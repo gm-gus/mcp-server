@@ -2,7 +2,7 @@ from mcp.server.fastmcp import FastMCP
 import io
 import base64
 import sys
-import matplotlib as plt
+import matplotlib.pyplot as plt
 from io import StringIO
 import traceback
 

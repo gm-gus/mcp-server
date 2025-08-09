@@ -7,13 +7,13 @@ load_dotenv(override=True)
 
 #Iniciar FastMCP
 mcp = FastMCP(
-    name = "websearch",
-    version = "1.0.0",
-    description = "Web search capability using Exa API"
+    name = "websearch"
+    #version = "1.0.0",
+    #description = "Web search capability using Exa API"
 )
 
 #Iniciar el cliente Exa
-exa_api_key = os.getenv("EXA_APY_KEY","")
+exa_api_key = os.getenv("EXA_API_KEY", "")
 exa = Exa(api_key=exa_api_key)
 
 websearch_config = {

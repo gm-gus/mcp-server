@@ -8,11 +8,13 @@ from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
+# Inicializar proveedor DeepSeek
 deepseek_provider = OpenAIProvider(
     base_url='https://api.deepseek.com',
     api_key=os.environ["DEEPSEEK_API_KEY"]
 )
 
+# Inicializar modelo
 deepseek_chat_model = OpenAIModel(
     'deepseek-chat',
     provider=deepseek_provider
@@ -39,10 +41,10 @@ agent = Agent(
 async def main():
     async with agent.run_mcp_servers():
         result = await agent.run("""
-            Crear un gráfico de barras que muestre la población de las cinco ciudades más grandes del mundo
+            Busca las últimas noticias sobre inteligencia artificial de Openai
                                  """)
         
-        ##Busca las últimas noticias sobre inteligencia artificial
+        ##Crear un gráfico de barras que muestre la población de las cinco ciudades más grandes del mundo
         print(result.data)
 
 if __name__ == "__main__":
